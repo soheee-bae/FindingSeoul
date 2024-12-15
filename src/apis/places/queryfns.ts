@@ -1,9 +1,14 @@
-export async function getPlacesByLocation(search?: string) {
-  return await fetch(
-    `${process.env.FINDING_SEOUL_BE_URL}/places/${search}`
-  ).then((res) => res.json());
+export async function getPlacesByStation(
+  station?: string,
+  displayCount?: number
+) {
+  return await fetch(`${process.env.BE_LOCAL_PORT}/places/${search}`).then(
+    (res) => res.json()
+  );
 }
 
-// export function getPlace() {
-//   return { place: "alaska" };
-// }
+export async function getPlaceById(search?: string) {
+  return await fetch(`${process.env.BE_LOCAL_PORT}/places/${search}`).then(
+    (res) => res.json()
+  );
+}
