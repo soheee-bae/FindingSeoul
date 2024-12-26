@@ -15,4 +15,3 @@ export function usePlaceById(search?: string) {
     queryFn: () => getPlacesByLocation(search),
   });
 }
-station;
