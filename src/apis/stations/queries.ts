@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { getStationsByArea } from "./queryfns";
+import { getStationsByDistrict } from "./queryfns";
 
-export function useStationsByArea(area?: string) {
+export function useStationsByDistrict(district?: string) {
   return useQuery({
-    queryKey: ["stations", area],
-    queryFn: () => getStationsByArea(area),
-    enabled: !!area,
+    queryKey: ["stations", district],
+    queryFn: () => getStationsByDistrict(district),
+    enabled: !!district,
   });
 }

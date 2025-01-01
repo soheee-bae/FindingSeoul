@@ -1,4 +1,4 @@
-const SEOUL_DISTRICTS: string[] = [
+export const SEOUL_DISTRICTS: string[] = [
   "강남구",
   "강동구",
   "강북구",
