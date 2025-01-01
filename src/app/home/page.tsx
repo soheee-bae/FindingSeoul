@@ -7,7 +7,6 @@ import { useContext } from "react";
 
 export default function Home() {
   const { stations, district, setDistrict } = useContext(DistrictContext);
-  console.log(JSON.stringify(stations));
   return (
     <div className={styles.root}>
       {SEOUL_DISTRICTS.map((district) => (
@@ -15,6 +14,12 @@ export default function Home() {
           {district}
         </p>
       ))}
+      {stations.stations &&
+        stations.stations.map((station) => (
+          <div>
+            <p>{station.name}</p>
+          </div>
+        ))}
     </div>
   );
 }
