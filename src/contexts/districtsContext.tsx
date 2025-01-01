@@ -38,12 +38,8 @@ function DistrictContextProvider(props: DistrictContextProps) {
 
   const { data: stationsData } = useStationsByDistrict(district);
 
-  console.log(district);
-  console.log(stationsData);
-  console.log(stations);
-
   useEffect(() => {
-    setStations(stationsData);
+    if (stationsData) setStations(stationsData);
   }, [district, stationsData]);
 
   return (
