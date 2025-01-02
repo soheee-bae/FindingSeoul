@@ -1,25 +1,25 @@
 "use client";
 
 import { useStationsByDistrict } from "@/apis/stations/queries";
-import { Stations } from "@/interfaces/stationsInterface";
+import { Station } from "@/interfaces/stationsInterface";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 
 export type DistrictContextContent = {
   district: string;
   setDistrict: (district: string) => void;
-  stations: Stations;
-  setStations: (stations: Stations) => void;
+  stations: string[];
+  setStations: (stations: string[]) => void;
+  subwayLines: string[];
+  setSubwayLines: (subwayLines: string[]) => void;
 };
 
 const DistrictContext = createContext<DistrictContextContent>({
   district: "",
   setDistrict: () => undefined,
-  stations: {
-    totalCount: 0,
-    name: "",
-    stations: [],
-  },
+  stations: [],
   setStations: () => undefined,
+  subwayLines: [],
+  setSubwayLines: () => undefined,
 });
 
 interface DistrictContextProps {
@@ -30,18 +30,24 @@ function DistrictContextProvider(props: DistrictContextProps) {
   const { children } = props;
 
   const [district, setDistrict] = useState<string>("");
-  const [stations, setStations] = useState<Stations>({
-    totalCount: 0,
-    name: "",
-    stations: [],
-  });
+  const [stations, setStations] = useState<string[]>([]);
+  const [subwayLines, setSubwayLines] = useState<string[]>([]);
 
   const { data: stationsData } = useStationsByDistrict(district);
 
-  console.log(district);
-  console.log(stationsData);
   useEffect(() => {
-    if (stationsData) setStations(stationsData);
+    if (stationsData) {
+      const stations = stationsData.stations.map((sub: Station) => sub.name);
+      const subwayLines = stationsData.stations.map(
+        (sub: Station) => sub.subwayLine
+      );
+      const filteredSubwayLines = subwayLines.filter(
+        (sub: string, idx: number) => subwayLines.indexOf(sub) === idx
+      );
+
+      setStations(stations);
+      setSubwayLines(filteredSubwayLines);
+    }
   }, [district, stationsData]);
 
   return (
@@ -51,6 +57,8 @@ function DistrictContextProvider(props: DistrictContextProps) {
         setDistrict,
         stations,
         setStations,
+        subwayLines,
+        setSubwayLines,
       }}
     >
       {children}

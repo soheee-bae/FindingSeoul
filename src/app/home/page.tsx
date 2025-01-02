@@ -6,7 +6,9 @@ import DistrictContext from "@/contexts/districtsContext";
 import { useContext } from "react";
 
 export default function Home() {
-  const { stations, district, setDistrict } = useContext(DistrictContext);
+  const { stations, district, setDistrict, subwayLines } =
+    useContext(DistrictContext);
+
   return (
     <div className={styles.root}>
       {SEOUL_DISTRICTS.map((district) => (
@@ -14,12 +16,15 @@ export default function Home() {
           {district}
         </p>
       ))}
-      {stations.stations &&
-        stations.stations.map((station) => (
-          <div>
-            <p>{station.name}</p>
+      {stations.length > 0 &&
+        stations.map((station) => (
+          <div key={station}>
+            <p>{station}</p>
           </div>
         ))}
+      {subwayLines.map((subway) => (
+        <p key={subway}> {subway}</p>
+      ))}
     </div>
   );
 }
