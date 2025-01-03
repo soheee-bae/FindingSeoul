@@ -4,10 +4,16 @@ import { SEOUL_DISTRICTS } from "@/data/districts";
 import styles from "@/app/home/home.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { useContext } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const { stations, district, setDistrict, subwayLines } =
     useContext(DistrictContext);
+  const router = useRouter();
+
+  const onStationClick = () => {
+    router.push("/");
+  };
 
   return (
     <div className={styles.root}>
@@ -18,9 +24,9 @@ export default function Home() {
       ))}
       {stations.length > 0 &&
         stations.map((station) => (
-          <div key={station}>
-            <p>{station}</p>
-          </div>
+          <p onClick={onStationClick} key={station}>
+            {station}
+          </p>
         ))}
       {subwayLines.map((subway) => (
         <p key={subway}> {subway}</p>
