@@ -1,3 +1,5 @@
+import Navbar from "@/components/navbar/navbar";
+
 export default function HomeLayout({
   children, // will be a page or nested layout
 }: {
@@ -6,8 +8,7 @@ export default function HomeLayout({
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
-      <nav></nav>
-
+      <Navbar />
       {children}
     </section>
   );
