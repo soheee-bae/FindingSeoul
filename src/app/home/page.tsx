@@ -4,6 +4,7 @@ import { SEOUL_DISTRICTS } from "@/data/districts";
 import styles from "@/app/home/home.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { useContext } from "react";
+import HomeMap from "@/components/homeMap/homeMap";
 
 export default function Home() {
   const { stations, district, setDistrict, subwayLines } =
@@ -27,6 +28,7 @@ export default function Home() {
       {subwayLines.map((subway) => (
         <p key={subway}> {subway}</p>
       ))}
+      <HomeMap />
     </div>
   );
 }

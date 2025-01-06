@@ -13,6 +13,7 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "src",
+    "types": ["vite-plugin-svgr/client"],
     "plugins": [
       {
         "name": "next"
