@@ -20,6 +20,7 @@ export default function HomeMap() {
           onClick={() => setDistrict(district.name)}
           key={district.name}
           className={styles.districtMap}
+          style={{ left: district?.x, top: district?.y }}
         >
           {district.mapImage}
         </div>

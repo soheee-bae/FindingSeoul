@@ -43,6 +43,8 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "강서구",
     mapImage: <Ganseogu />,
+    x: 8,
+    y: 175,
   },
   {
     name: "관악구",
