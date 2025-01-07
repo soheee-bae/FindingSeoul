@@ -1,0 +1,19 @@
+.root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    filter: drop-shadow(8px 14px 14px #707070);
+  }
+  border: 1px solid red;
+}
+
+.baseMap {
+  height: 100%;
+  width: 100%;
+}
+
+.districtMap {
+  position: absolute;
+}
