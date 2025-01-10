@@ -4,9 +4,10 @@
   justify-content: center;
   align-items: center;
   svg {
-    filter: drop-shadow(8px 14px 14px #707070);
+    filter: drop-shadow(4px 4px 5px #c6c8ca);
   }
-  border: 1px solid red;
+  background-color: #e4e4e4;
+  border-radius: 10px;
 }
 
 .baseMap {

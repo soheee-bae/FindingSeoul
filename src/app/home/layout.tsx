@@ -1,15 +1,15 @@
 import Navbar from "@/components/navbar/navbar";
+import styles from "@/app/home/home.module.scss";
 
 export default function HomeLayout({
-  children, // will be a page or nested layout
+  children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
+    <div className={styles.layout}>
       <Navbar />
       {children}
-    </section>
+    </div>
   );
 }

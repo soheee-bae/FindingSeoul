@@ -1,4 +1,5 @@
 import TanStackProvider from "@/apis/providers";
+import styles from "./root.module.scss";
 
 export const metadata = {
   title: "Finding Seoul",
@@ -12,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={styles.body}>
         <TanStackProvider>{children}</TanStackProvider>
       </body>
     </html>
