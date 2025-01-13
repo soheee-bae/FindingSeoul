@@ -9,7 +9,7 @@ export default function HomeLayout({
   return (
     <div className={styles.layout}>
       <Navbar />
-      {children}
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

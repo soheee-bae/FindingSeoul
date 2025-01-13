@@ -12,19 +12,19 @@ export default function HomeMap() {
 
   return (
     <div className={styles.root}>
-      <div className={styles.baseMap}>
+      <div className={styles.map}>
         <WholeMap />
+        {SEOUL_DISTRICTS.map((district) => (
+          <div
+            onClick={() => setDistrict(district.name)}
+            key={district.name}
+            className={styles.districtMap}
+            style={{ left: district?.x, top: district?.y }}
+          >
+            {district.mapImage}
+          </div>
+        ))}
       </div>
-      {SEOUL_DISTRICTS.map((district) => (
-        <div
-          onClick={() => setDistrict(district.name)}
-          key={district.name}
-          className={styles.districtMap}
-          style={{ left: district?.x, top: district?.y }}
-        >
-          {district.mapImage}
-        </div>
-      ))}
     </div>
   );
 }

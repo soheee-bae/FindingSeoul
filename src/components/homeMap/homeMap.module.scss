@@ -1,18 +1,24 @@
 .root {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  svg {
-    filter: drop-shadow(4px 4px 5px #c6c8ca);
-  }
+
   background-color: #e4e4e4;
   border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+
+  svg {
+    // filter: drop-shadow(4px 4px 5px #c6c8ca);
+  }
 }
 
-.baseMap {
-  height: 100%;
-  width: 100%;
+.map {
+  // height: 100%;
+  // width: 100%;
+  position: relative;
+
+  border: 1px solid red;
 }
 
 .districtMap {
