@@ -11,6 +11,7 @@ const Dobonggu = ({
 }) => {
   return (
     <svg
+      max={width}
       width={width}
       height={height}
       viewBox="0 0 108 117"

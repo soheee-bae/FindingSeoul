@@ -14,7 +14,7 @@ export default function HomeMap() {
     <div className={styles.root}>
       <div className={styles.map}>
         <WholeMap />
-        {SEOUL_DISTRICTS.map((district) => (
+        {/* {SEOUL_DISTRICTS.map((district) => (
           <div
             onClick={() => setDistrict(district.name)}
             key={district.name}
@@ -23,7 +23,7 @@ export default function HomeMap() {
           >
             {district.mapImage}
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

@@ -32,8 +32,8 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "강남구",
     mapImage: <Gangnamgu />,
-    x: 585,
-    y: 328,
+    x: 588,
+    y: 326,
   },
   {
     name: "강동구",
@@ -116,7 +116,7 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "서초구",
     mapImage: <Seochogu />,
-    x: 495,
+    x: 498,
     y: 342,
   },
   {
@@ -134,8 +134,8 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "송파구",
     mapImage: <Songpagu />,
-    x: 725,
-    y: 301,
+    x: 726,
+    y: 303,
   },
   {
     name: "양천구",
