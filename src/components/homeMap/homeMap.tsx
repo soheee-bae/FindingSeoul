@@ -3,7 +3,7 @@
 import styles from "@/components/homeMap/homeMap.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { SEOUL_DISTRICTS } from "@/data/districts";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 export default function HomeMap() {

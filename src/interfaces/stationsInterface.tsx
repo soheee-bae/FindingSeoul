@@ -11,6 +11,5 @@ export interface Stations {
 
 export interface StationsPerLine {
   subwayLine: number;
-
   stations: Station[];
 }
