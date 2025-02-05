@@ -8,3 +8,9 @@ export interface Stations {
   name: string;
   stations: Station[];
 }
+
+export interface StationsPerLine {
+  subwayLine: number;
+
+  stations: Station[];
+}

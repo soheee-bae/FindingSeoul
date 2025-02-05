@@ -1,7 +1,7 @@
 "use client";
 
 import { useStationsByDistrict } from "@/apis/stations/queries";
-import { Station } from "@/interfaces/stationsInterface";
+import { Station, StationsPerLine } from "@/interfaces/stationsInterface";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 
 export type DistrictContextContent = {
@@ -11,6 +11,7 @@ export type DistrictContextContent = {
   setStations: (stations: string[]) => void;
   subwayLines: string[];
   setSubwayLines: (subwayLines: string[]) => void;
+  stationsPerSubwayline: StationsPerLine[];
 };
 
 const DistrictContext = createContext<DistrictContextContent>({
@@ -20,6 +21,7 @@ const DistrictContext = createContext<DistrictContextContent>({
   setStations: () => undefined,
   subwayLines: [],
   setSubwayLines: () => undefined,
+  stationsPerSubwayline: [],
 });
 
 interface DistrictContextProps {
@@ -32,12 +34,17 @@ function DistrictContextProvider(props: DistrictContextProps) {
   const [district, setDistrict] = useState<string>("");
   const [stations, setStations] = useState<string[]>([]);
   const [subwayLines, setSubwayLines] = useState<string[]>([]);
+  const [stationsPerSubwayline, setStationsPerSubwayline] = useState<
+    StationsPerLine[]
+  >([]);
 
   const { data: stationsData } = useStationsByDistrict(district);
 
   useEffect(() => {
     if (stationsData) {
-      const stations = stationsData.stations.map((sub: Station) => sub.name);
+      const stations = stationsData.stations.map((sub: Station) =>
+        sub.name.trim()
+      );
       const subwayLines = stationsData.stations.map(
         (sub: Station) => sub.subwayLine
       );
@@ -45,11 +52,23 @@ function DistrictContextProvider(props: DistrictContextProps) {
         (sub: string, idx: number) => subwayLines.indexOf(sub) === idx
       );
 
+      const stationsPerSubwayline = filteredSubwayLines.map((line: number) => {
+        const data = stationsData.stations.filter(
+          (sub: Station) => sub.subwayLine === line
+        );
+        return {
+          subwayLine: line,
+          stations: data,
+        };
+      });
+
       setStations(stations);
       setSubwayLines(filteredSubwayLines);
+      setStationsPerSubwayline(stationsPerSubwayline);
     }
   }, [district, stationsData]);
 
+  console.log(stationsPerSubwayline);
   return (
     <DistrictContext.Provider
       value={{
@@ -59,6 +78,7 @@ function DistrictContextProvider(props: DistrictContextProps) {
         setStations,
         subwayLines,
         setSubwayLines,
+        stationsPerSubwayline,
       }}
     >
       {children}
