@@ -3,7 +3,8 @@
 import styles from "@/components/homeMap/homeMap.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { SEOUL_DISTRICTS } from "@/data/districts";
-import { WholeMap } from "@/icons";
+import { WholeMap, Dongdaemungu } from "@/icons";
+import { relative } from "path";
 import { useContext } from "react";
 
 export default function HomeMap() {
@@ -13,7 +14,7 @@ export default function HomeMap() {
   return (
     <div className={styles.root}>
       <div className={styles.map}>
-        <WholeMap />
+        {/* <WholeMap /> */}
         {SEOUL_DISTRICTS.map((district) => (
           <div
             onClick={() => setDistrict(district.name)}
