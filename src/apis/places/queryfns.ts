@@ -1,14 +1,14 @@
 export async function getPlacesByStation(
-  station?: string,
+  station: string,
+  type?: string,
   displayCount?: number
 ) {
-  return await fetch(`${process.env.BE_LOCAL_PORT}/places/${search}`).then(
-    (res) => res.json()
-  );
-}
-
-export async function getPlaceById(search?: string) {
-  return await fetch(`${process.env.BE_LOCAL_PORT}/places/${search}`).then(
-    (res) => res.json()
-  );
+  const result = await fetch(
+    `${
+      process.env.API_URL
+    }/places?station=${station}&type=${type}&displayCount=${
+      displayCount || 75
+    }}`
+  ).then((res) => res.json());
+  return result;
 }

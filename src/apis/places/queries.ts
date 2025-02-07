@@ -1,17 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPlacesByLocation } from "./queryfns";
+import { getPlacesByStation } from "./queryfns";
 
-export function usePlacesByStation(station?: string, displayCount?: number) {
+export function usePlacesByStation(
+  station: string,
+  type?: string,
+  displayCount?: number
+) {
   return useQuery({
     queryKey: ["places", station],
-    queryFn: () => getPlacesByLocation(search),
+    queryFn: () => getPlacesByStation(station, type, displayCount),
     enabled: !!station,
-  });
-}
-
-export function usePlaceById(search?: string) {
-  return useQuery({
-    queryKey: ["place", search],
-    queryFn: () => getPlacesByLocation(search),
   });
 }
