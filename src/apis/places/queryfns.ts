@@ -1,14 +1,12 @@
-export async function getPlacesByStation(
-  station: string,
-  type?: string,
-  displayCount?: number
-) {
+import { PlacesProps } from "./placesInterface";
+
+export async function getPlacesByStation(params: PlacesProps) {
+  const encodedParams = Object.entries(params)
+    .map((kv) => kv.join("="))
+    .join("&");
+
   const result = await fetch(
-    `${
-      process.env.API_URL
-    }/places?station=${station}&type=${type}&displayCount=${
-      displayCount || 75
-    }}`
+    `${process.env.API_URL}/places?${encodedParams}`
   ).then((res) => res.json());
   return result;
 }

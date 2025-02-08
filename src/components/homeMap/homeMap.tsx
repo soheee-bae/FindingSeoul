@@ -11,6 +11,10 @@ export default function HomeMap() {
     useContext(DistrictContext);
   const router = useRouter();
 
+  const handleStationClick = (station: string) => {
+    router.push(`/places/${station}`);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.map}>
@@ -33,7 +37,7 @@ export default function HomeMap() {
             <p
               key={station}
               onClick={() => {
-                router.push(`/places`);
+                handleStationClick(station);
               }}
               style={{ cursor: "pointer" }}
             >
