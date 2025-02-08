@@ -8,7 +8,7 @@ export function usePlacesByStation(
   options?: UseQueryOptions
 ) {
   return useQuery({
-    queryKey: places.getPlacesByStation(params.station).queryKey,
+    queryKey: places.getPlacesByStation(params?.station).queryKey,
     queryFn: () => getPlacesByStation(params),
     enabled: !!options?.enabled,
   });

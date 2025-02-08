@@ -1,3 +1,6 @@
+// Server Component (Parent Component)
+
+// Client Component (Child Component)
 "use client";
 
 import { usePlacesByStation } from "@/apis/places/queries";
@@ -8,7 +11,10 @@ export default function Place() {
   const { data: places } = usePlacesByStation(params, {
     enabled: !!params.station,
   });
+  console.log(params);
   console.log(places);
+  const categories = places?.map((place) => place.category);
+  console.log(categories);
 
   return (
     <div>
