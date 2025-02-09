@@ -1,12 +1,24 @@
 // Server Component (Parent Component)
+export default async function Place() {
+  const params = useParams();
+  const { data: places } = usePlacesByStation(params, {
+    enabled: !!params.station,
+  });
 
+  // Fetch data on the server
+  const data = await fetch("https://api.example.com/data").then((res) =>
+    res.json()
+  );
+
+  return <PlaceContent data={data} />;
+}
 // Client Component (Child Component)
-"use client";
+("use client");
 
 import { usePlacesByStation } from "@/apis/places/queries";
 import { useParams } from "next/navigation";
 
-export default function Place() {
+export default function PlaceContent() {
   const params = useParams();
   const { data: places } = usePlacesByStation(params, {
     enabled: !!params.station,
