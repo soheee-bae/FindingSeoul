@@ -17,6 +17,7 @@ export default function PlaceContent() {
   );
   console.log(params);
   console.log(places);
+
   const categories = places?.map((place) => place.category).flat();
   const cat = categories?.filter(function (item, pos) {
     return categories.indexOf(item) == pos;
