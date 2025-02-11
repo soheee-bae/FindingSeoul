@@ -3,7 +3,7 @@
 import { usePlacesByStation } from "@/apis/places/queries";
 import { useParams, useSearchParams } from "next/navigation";
 
-export default function PlaceContent() {
+export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
 
@@ -33,7 +33,7 @@ export default function PlaceContent() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "10px",
+              gap: "2px",
               border: "1px solid gray",
               padding: "10px",
               borderRadius: 10,
@@ -50,9 +50,8 @@ export default function PlaceContent() {
             </div>
             <p>{place.description}</p>
             <p>{place.homePage}</p>
-
             <p>{place.telDisplay || place.tel}</p>
-            <img src={place.thumUrl} />
+            <img width={10} height={10} src={place.thumUrl} />
             <p>{place.menuInfo}</p>
           </div>
         );
