@@ -7,12 +7,13 @@ export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
 
-  const type = searchParams.get("type");
+  const type = searchParams.get("type") as string;
 
   const { data: places } = usePlacesByStation(
-    { station: params.station, type },
+    { station: params?.station as string, type },
     {
-      enabled: !!params.station,
+      enabled: !!params?.station,
+      queryKey: [],
     }
   );
   console.log(params);
@@ -26,6 +27,10 @@ export default function Place() {
 
   return (
     <div>
+      <div>
+        <div>음식점</div>
+        <div>카페</div>
+      </div>
       {places?.map((place) => {
         return (
           <div
