@@ -64,3 +64,12 @@ export default function Place() {
     </div>
   );
 }
+
+
+// Categpries
+
+// 음식점, 카페 
+
+// 음식 종류 
+// 한식, 양식, 중식, 분식, 카페 & 디저트, 일식
+
