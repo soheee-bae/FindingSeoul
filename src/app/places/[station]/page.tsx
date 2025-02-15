@@ -1,11 +1,15 @@
 "use client";
 
 import { usePlacesByStation } from "@/apis/places/queries";
+import SearchField from "@/components/searchField/searchField";
 import { useParams, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
+  const [search, setSearch] = useState<string>();
+  const debouncedSearch = useDebounce(search, 300);
 
   const type = searchParams.get("type") as string;
 
@@ -16,17 +20,15 @@ export default function Place() {
       queryKey: [],
     }
   );
-  console.log(params);
-  console.log(places);
 
   const categories = places?.map((place) => place.category).flat();
   const cat = categories?.filter(function (item, pos) {
     return categories.indexOf(item) == pos;
   });
-  console.log(cat);
 
   return (
     <div>
+      <SearchField search={search} setSearch={setSearch} />
       <div>
         <div>음식점</div>
         <div>카페</div>
@@ -65,11 +67,9 @@ export default function Place() {
   );
 }
 
-
 // Categpries
 
-// 음식점, 카페 
+// 음식점, 카페
 
-// 음식 종류 
+// 음식 종류
 // 한식, 양식, 중식, 분식, 카페 & 디저트, 일식
-
