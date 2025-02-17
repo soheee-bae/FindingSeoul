@@ -2,6 +2,7 @@
 
 import { usePlacesByStation } from "@/apis/places/queries";
 import SearchField from "@/components/searchField/searchField";
+import { useDebounce } from "@/hooks/useDebounce";
 import { useParams, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
@@ -9,8 +10,10 @@ export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
   const [search, setSearch] = useState<string>();
-  const debouncedSearch = useDebounce(search, 300);
+  // const debouncedSearch = useDebounce(search, 300);
 
+  console.log(search);
+  // console.log(debouncedSearch);
   const type = searchParams.get("type") as string;
 
   const { data: places } = usePlacesByStation(
