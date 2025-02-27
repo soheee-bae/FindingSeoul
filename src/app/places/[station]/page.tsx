@@ -9,15 +9,16 @@ import { useState } from "react";
 export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
-  const [search, setSearch] = useState<string>();
+  const type = searchParams.get("type") as string;
+
+  const [search, setSearch] = useState<string>(type);
   // const debouncedSearch = useDebounce(search, 300);
 
   console.log(search);
   // console.log(debouncedSearch);
-  const type = searchParams.get("type") as string;
 
   const { data: places } = usePlacesByStation(
-    { station: params?.station as string, type },
+    { station: params?.station as string, type: search },
     {
       enabled: !!params?.station,
       queryKey: [],
