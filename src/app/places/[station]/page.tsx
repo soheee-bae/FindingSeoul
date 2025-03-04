@@ -2,42 +2,40 @@
 
 import { usePlacesByStation } from "@/apis/places/queries";
 import SearchField from "@/components/searchField/searchField";
-import { useDebounce } from "@/hooks/useDebounce";
 import { useParams, useSearchParams } from "next/navigation";
 import { useState } from "react";
+
+const DEFAULT_TYPE = "음식점";
 
 export default function Place() {
   const params = useParams();
   const searchParams = useSearchParams();
-  const type = searchParams.get("type") as string;
+  const type = (searchParams.get("type") as string) || DEFAULT_TYPE;
 
-  const [search, setSearch] = useState<string>(type);
-  // const debouncedSearch = useDebounce(search, 300);
+  const [search, setSearch] = useState<string>();
 
-  console.log(search);
-  // console.log(debouncedSearch);
+  console.log("search : " + search);
 
-  const { data: places } = usePlacesByStation(
-    { station: params?.station as string, type: search },
-    {
-      enabled: !!params?.station,
-      queryKey: [],
-    }
-  );
-
-  const categories = places?.map((place) => place.category).flat();
-  const cat = categories?.filter(function (item, pos) {
-    return categories.indexOf(item) == pos;
+  const { data: places } = usePlacesByStation({
+    station: params?.station as string,
+    type: search || type,
   });
+
+  console.log(places);
+
+  // const categories = places?.map((place) => place.category).flat();
+  // const cat = categories?.filter(function (item, pos) {
+  //   return categories.indexOf(item) == pos;
+  // });
 
   return (
     <div>
-      <SearchField search={search} setSearch={setSearch} />
+      <SearchField setSearch={setSearch} />
       <div>
         <div>음식점</div>
         <div>카페</div>
       </div>
-      {places?.map((place) => {
+      {/* {places?.map((place) => {
         return (
           <div
             key={place.id}
@@ -66,7 +64,7 @@ export default function Place() {
             <p>{place.menuInfo}</p>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

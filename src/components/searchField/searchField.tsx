@@ -1,20 +1,28 @@
 "use client";
-
+import { useDebounce } from "@/hooks/useDebounce";
+import { useEffect, useState } from "react";
 interface searchFieldProps {
-  search?: string;
-  setSearch?: (search: string) => void;
+  setSearch: (search: string) => void;
 }
 
 export default function SearchField(props: searchFieldProps) {
-  const { search, setSearch } = props;
+  const { setSearch } = props;
+
+  const [input, setInput] = useState<string>();
+
+  const debouncedSearch = useDebounce(input, 300);
+
+  useEffect(() => {
+    if (debouncedSearch) setSearch(debouncedSearch);
+  }, [debouncedSearch, setSearch]);
 
   return (
     <input
       type="search"
       placeholder="Search"
-      value={search}
+      value={input}
       onChange={(e) => {
-        setSearch?.(e.target.value);
+        setInput?.(e.target.value);
       }}
     />
   );

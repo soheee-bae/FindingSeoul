@@ -12,7 +12,7 @@ export default function HomeMap() {
   const router = useRouter();
 
   const handleStationClick = (station: string) => {
-    router.push(`/places/${station}?type=음식점`);
+    router.push(`/places/${station}`);
   };
 
   return (
