@@ -9,11 +9,10 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "src",
-    "types": ["vite-plugin-svgr/client"],
     "plugins": [
       {
         "name": "next"

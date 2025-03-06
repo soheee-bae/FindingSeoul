@@ -1,7 +1,9 @@
 "use client";
 
+import { Place } from "@/interfaces/places";
+
 interface PlaceCardProps {
-  place: any;
+  place: Place;
 }
 
 export default function Place(props: PlaceCardProps) {
