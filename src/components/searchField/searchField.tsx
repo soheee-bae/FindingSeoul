@@ -13,7 +13,11 @@ export default function SearchField(props: searchFieldProps) {
   const debouncedSearch = useDebounce(input, 300);
 
   useEffect(() => {
-    if (debouncedSearch) setSearch(debouncedSearch);
+    if (debouncedSearch) {
+      setSearch(debouncedSearch);
+    } else {
+      setSearch("");
+    }
   }, [debouncedSearch, setSearch]);
 
   return (

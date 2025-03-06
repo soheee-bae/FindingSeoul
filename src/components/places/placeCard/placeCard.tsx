@@ -6,7 +6,7 @@ interface PlaceCardProps {
   place: Place;
 }
 
-export default function Place(props: PlaceCardProps) {
+export default function PlaceCard(props: PlaceCardProps) {
   const { place } = props;
   return (
     <div
@@ -33,7 +33,7 @@ export default function Place(props: PlaceCardProps) {
       <p>{place.homePage}</p>
       <p>{place.telDisplay || place.tel}</p>
       <img width={10} height={10} src={place.thumUrl} />
-      <p>{place.menuInfo}</p>
+      {/* <p>{place.menuInfo}</p> */}
     </div>
   );
 }

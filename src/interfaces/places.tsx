@@ -21,7 +21,11 @@ export interface Place {
   display?: string;
   distance: number;
   thumUrl: string;
-  menuInfo: string[];
+  menuInfo?: {
+    id: number;
+    name: string;
+    price: string;
+  };
   homePage?: string;
   naverBookingUrl?: string;
   tel?: string;
