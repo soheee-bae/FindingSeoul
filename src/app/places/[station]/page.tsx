@@ -16,7 +16,7 @@ export default function Place() {
 
   console.log("search : " + search);
 
-  const { data: places } = usePlacesByStation({
+  const { data: places = [] } = usePlacesByStation({
     station: params?.station as string,
     type: search || type,
   });
@@ -35,7 +35,7 @@ export default function Place() {
         <div>음식점</div>
         <div>카페</div>
       </div>
-      {/* {places?.map((place) => {
+      {places?.map((place) => {
         return (
           <div
             key={place.id}
@@ -64,7 +64,7 @@ export default function Place() {
             <p>{place.menuInfo}</p>
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 }

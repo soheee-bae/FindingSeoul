@@ -3,3 +3,5 @@ export interface PlacesProps {
   type?: string;
   displayCount?: number;
 }
+
+export interface Place {}
