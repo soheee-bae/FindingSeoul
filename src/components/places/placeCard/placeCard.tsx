@@ -14,10 +14,10 @@ export default function PlaceCard(props: PlaceCardProps) {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "2px",
         border: "1px solid gray",
         padding: "10px",
         borderRadius: 10,
+        fontSize: 10,
       }}
     >
       <h5>{place.display || place.name}</h5>

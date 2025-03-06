@@ -17,7 +17,6 @@ export default function Place() {
 
   const [search, setSearch] = useState<string>();
 
-  console.log(search);
   const {
     data: places = [],
     isLoading,
@@ -32,16 +31,25 @@ export default function Place() {
   // const cat = categories?.filter(function (item, pos) {
   //   return categories.indexOf(item) == pos;
   // });
-
+  console.log(places);
   return (
     <div>
       <SearchField setSearch={setSearch} />
       {isLoading || isFetching ? (
         <div>Loading....</div>
       ) : places && places.length > 0 && isFetched ? (
-        places?.map((place: PlaceCardInterface) => (
-          <PlaceCard place={place} key={place.name} />
-        ))
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 10,
+            flexWrap: "wrap",
+          }}
+        >
+          {places?.map((place: PlaceCardInterface) => (
+            <PlaceCard place={place} key={place.name} />
+          ))}
+        </div>
       ) : (
         <EmptyPlaces />
       )}
