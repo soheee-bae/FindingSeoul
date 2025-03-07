@@ -1,4 +1,4 @@
-import { PlacesProps } from "./placesInterface";
+import { PlacesProps } from "@/interfaces/places";
 
 export async function getPlacesByStation(params: PlacesProps) {
   const encodedParams = Object.entries(params)

@@ -27,11 +27,6 @@ export default function Place() {
     type: search || type,
   });
 
-  // const categories = places?.map((place) => place.category).flat();
-  // const cat = categories?.filter(function (item, pos) {
-  //   return categories.indexOf(item) == pos;
-  // });
-  console.log(places);
   return (
     <div>
       <SearchField setSearch={setSearch} />
