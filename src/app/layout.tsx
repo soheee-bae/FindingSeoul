@@ -1,6 +1,6 @@
 import TanStackProvider from "@/apis/providers";
-import styles from "./root.module.scss";
-import Navbar from "@/components/navbar/navbar";
+import { Navbar } from "@/components";
+import styles from "./layout.module.scss";
 
 export const metadata = {
   title: "Finding Seoul",
