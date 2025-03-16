@@ -1,12 +1,11 @@
 "use client";
 
-import { usePlacesByStation } from "@/apis/places/queries";
-import EmptyPlaces from "@/components/places/emptyPlaces/emptyPlaces";
-import PlaceCard from "@/components/places/placeCard/placeCard";
-import SearchField from "@/components/searchField/searchField";
-import { Place as PlaceCardInterface } from "@/interfaces/places";
-import { useParams, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+
+import { usePlacesByStation } from "@/apis/places/queries";
+import { EmptyPlaces, PlaceCard, SearchField } from "@/components";
+import { Place as PlaceCardInterface } from "@/interfaces/places";
 
 const DEFAULT_TYPE = "음식점";
 

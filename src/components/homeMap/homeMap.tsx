@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/homeMap/homeMap.module.scss";
+import styles from "./homeMap.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { SEOUL_DISTRICTS } from "@/data/districts";
 import { useRouter } from "next/navigation";

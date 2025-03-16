@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "@/components/navbar/navbar.module.scss";
-import Menubar from "@/icons/menubar";
+import styles from "./navbar.module.scss";
+import { Menubar } from "@/icons";
 
 export default function Navbar() {
   return (

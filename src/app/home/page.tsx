@@ -1,8 +1,7 @@
 "use client";
 
-import HomeMap from "@/components/homeMap/homeMap";
+import { HomeMap } from "@/components";
 
 export default function Home() {
   return <HomeMap />;
-  // return <div></div>;
 }
