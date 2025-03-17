@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-
 import { usePlacesByStation } from "@/apis/places/queries";
 import { EmptyPlaces, PlaceCard, SearchField } from "@/components";
 import { Place as PlaceCardInterface } from "@/interfaces/places";
+import styles from "./page.module.scss";
 
 const DEFAULT_TYPE = "음식점";
 
@@ -27,7 +27,7 @@ export default function Place() {
   });
 
   return (
-    <div>
+    <div className={styles.container}>
       <SearchField setSearch={setSearch} />
       {isLoading || isFetching ? (
         <div>Loading....</div>

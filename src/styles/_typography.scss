@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100..900&family=IBM+Plex+Sans+KR&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nanum+Gothic&display=swap");
+@import url("https://fonts%googleapis%com/css2?family=Encode+Sans+SC:wght@100%%900&family=IBM+Plex+Sans+KR&family=Inter:ital,opsz,wght@0,14%%32,100%%900;1,14%%32,100%%900&family=Nanum+Gothic&display=swap");
 
 $text-3xs: 10px;
 $text-2xs: 11px;
@@ -33,53 +33,53 @@ $ibm-plex-sans-KR: "IBM Plex Sans KR", sans-serif;
 $encode-sans-sc: "Encode Sans SC", sans-serif;
 $inter: "Inter", sans-serif;
 
-.h1 {
-  font-size: var($text-5xl);
-  font-weight: var($font-bold);
+%h1 {
+  font-size: $text-5xl;
+  font-weight: $font-bold;
 }
 
-.h2 {
-  font-size: var($text-3xl);
-  font-weight: var($font-bold);
+%h2 {
+  font-size: $text-3xl;
+  font-weight: $font-bold;
 }
 
-.h3 {
-  font-size: var($text-2xl);
-  font-weight: var($font-medium);
+%h3 {
+  font-size: $text-2xl;
+  font-weight: $font-medium;
 }
 
-.h4 {
-  font-size: var($text-xl);
-  font-weight: var($font-semibold);
+%h4 {
+  font-size: $text-xl;
+  font-weight: $font-semibold;
 }
 
-.h5 {
-  font-size: var($text-base);
-  font-weight: var($font-medium);
+%h5 {
+  font-size: $text-base;
+  font-weight: $font-medium;
 }
 
-.body-1 {
-  font-size: var($text-base);
-  font-weight: var($font-normal);
+%body-1 {
+  font-size: $text-base;
+  font-weight: $font-normal;
 }
 
-.body-2 {
-  font-size: var($text-xs);
-  font-weight: var($font-normal);
+%body-2 {
+  font-size: $text-xs;
+  font-weight: $font-normal;
 }
 
-.nanumGothicKR {
-  font-family: var($nanum-gothic);
+%nanumGothicKR {
+  font-family: $nanum-gothic;
 }
 
-.ibmSansKR {
-  font-family: var($ibm-plex-sans-KR);
+%ibmSansKR {
+  font-family: $ibm-plex-sans-KR;
 }
 
-.encodeSansEN {
-  font-family: var($encode-sans-sc);
+%encodeSansEN {
+  font-family: $encode-sans-sc;
 }
 
-.interEN {
-  font-family: var($inter);
+%interEN {
+  font-family: $inter;
 }

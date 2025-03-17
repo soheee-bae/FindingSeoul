@@ -1,7 +1,8 @@
-// @import "typography";
-// @import "../../styles/colors";
+@use "@/styles" as *;
 
 .container {
-  font-family: --var(--encode-sans-sc);
-  font-weight: --var(--font-bold);
+  font-family: $encode-sans-sc;
+  font-weight: $font-semibold;
+  font-size: $text-xl;
+  color: $darker-blue;
 }
