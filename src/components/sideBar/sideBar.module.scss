@@ -2,7 +2,15 @@
 
 .container {
   height: 100vh;
-  //   background-color: $white;
   //   z-index: 5;
+}
+
+.content {
+  background-color: $white;
   border: 1px solid red;
+
+  position: absolute;
+  right: 0;
+  width: 100px;
+  transition: all 0.3s;
 }
