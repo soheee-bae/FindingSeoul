@@ -2,6 +2,7 @@
 
 import styles from "./sideBar.module.scss";
 import { ReactNode, useState } from "react";
+import clsx from "clsx";
 
 interface SideBarProps {
   button: ReactNode;
@@ -17,7 +18,11 @@ export default function SideBar(props: SideBarProps) {
   return (
     <div className={styles.container}>
       <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
-      <div className={styles.content}>{content}</div>
+      <div className={clsx(styles.content, isOpen && styles.openContent)}>
+        <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
+
+        {content}
+      </div>
     </div>
   );
 }

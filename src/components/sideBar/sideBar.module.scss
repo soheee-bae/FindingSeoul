@@ -1,16 +1,22 @@
 @use "@/styles" as *;
 
 .container {
-  height: 100vh;
-  //   z-index: 5;
+  border: 1px solid red;
 }
 
 .content {
   background-color: $white;
   border: 1px solid red;
+  height: calc(100vh - 30px);
 
   position: absolute;
-  right: 0;
+  right: 15px;
+  top: 15px;
   width: 100px;
   transition: all 0.3s;
+  transform: translateX(500px);
+}
+
+.openContent {
+  transform: translateX(0);
 }
