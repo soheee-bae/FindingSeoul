@@ -7,20 +7,24 @@ import clsx from "clsx";
 interface SideBarProps {
   button: ReactNode;
   content: ReactNode;
-  className?: string;
   direction?: "left" | "right";
 }
 
 export default function SideBar(props: SideBarProps) {
-  const { button, content, className, direction = "right" } = props;
+  const { button, content, direction = "right" } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={styles.container}>
       <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
-      <div className={clsx(styles.content, isOpen && styles.openContent)}>
+      <div
+        className={clsx(
+          styles.content,
+          direction === "left" ? styles.leftContent : styles.rightContent,
+          isOpen && styles.openContent
+        )}
+      >
         <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
-
         {content}
       </div>
     </div>

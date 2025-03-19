@@ -8,5 +8,6 @@ export { default as PlaceCard } from "./places/placeCard/placeCard";
 
 // common components
 export { default as SearchField } from "./searchField/searchField";
+export { default as SideBar } from "./sideBar/sideBar";
 
 export { default as Logo } from "./logo/logo";

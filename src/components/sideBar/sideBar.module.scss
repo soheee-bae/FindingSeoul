@@ -1,20 +1,27 @@
 @use "@/styles" as *;
 
-.container {
-  border: 1px solid red;
-}
-
 .content {
   background-color: $white;
-  border: 1px solid red;
+  border: 2px solid $primary-blue;
   height: calc(100vh - 30px);
-
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: absolute;
-  right: 15px;
   top: 15px;
-  width: 100px;
+  width: 300px;
   transition: all 0.3s;
-  transform: translateX(500px);
+}
+
+.leftContent {
+  transform: translateX(-350px);
+  left: 15px;
+  right: auto;
+}
+
+.rightContent {
+  transform: translateX(350px);
+  right: 15px;
+  left: auto;
 }
 
 .openContent {
