@@ -11,6 +11,7 @@ export default function Navbar() {
       <SideBar
         button={<Menubar width={24} height={24} />}
         content={<div>Hello!!</div>}
+        direction="left"
       />
     </div>
   );
