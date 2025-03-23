@@ -1,3 +1,5 @@
+@use "@/styles" as *;
+
 .html,
 .body {
   margin: 0;
@@ -7,5 +9,5 @@
 }
 
 .children {
-  padding: 0 20px;
+  font-family: $nanum-gothic;
 }

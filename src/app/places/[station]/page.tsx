@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { usePlacesByStation } from "@/apis/places/queries";
-import { EmptyPlaces, PlaceCard, SearchField } from "@/components";
+import { EmptyPlaces, PlaceCard } from "@/components";
 import { Place as PlaceCardInterface } from "@/interfaces/places";
 import styles from "./page.module.scss";
 import PlacesHeader from "@/components/places/placesHeader/placesHeader";
