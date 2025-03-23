@@ -1,0 +1,38 @@
+@use "@/styles" as *;
+
+.container {
+}
+
+.backButton {
+  border: 2px solid $dark-blue;
+  border-radius: 50%;
+
+  height: 29px;
+  aspect-ratio: 1/1;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+
+  path {
+    stroke: $dark-blue;
+  }
+
+  &:hover {
+    background-color: $dark-blue;
+    path {
+      stroke: $white;
+    }
+  }
+}
+
+.content {
+  .innerContent {
+  }
+}
+.names {
+}
+
+.img {
+}

@@ -7,11 +7,12 @@ import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
 export default function HomeMap() {
-  const { stations, district, setDistrict, subwayLines } =
+  const { stations, district, setDistrict, subwayLines, setSelectdStation } =
     useContext(DistrictContext);
   const router = useRouter();
 
   const handleStationClick = (station: string) => {
+    setSelectdStation(station);
     router.push(`/places/${station}`);
   };
 

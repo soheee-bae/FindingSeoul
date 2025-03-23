@@ -6,10 +6,11 @@ import { usePlacesByStation } from "@/apis/places/queries";
 import { EmptyPlaces, PlaceCard, SearchField } from "@/components";
 import { Place as PlaceCardInterface } from "@/interfaces/places";
 import styles from "./page.module.scss";
+import PlacesHeader from "@/components/places/placesHeader/placesHeader";
 
 const DEFAULT_TYPE = "음식점";
 
-export default function Place() {
+export default function Places() {
   const params = useParams();
   const searchParams = useSearchParams();
   const type = (searchParams.get("type") as string) || DEFAULT_TYPE;
@@ -28,7 +29,7 @@ export default function Place() {
 
   return (
     <div className={styles.container}>
-      <SearchField setSearch={setSearch} />
+      <PlacesHeader setSearch={setSearch} />
       {isLoading || isFetching ? (
         <div>Loading....</div>
       ) : places && places.length > 0 && isFetched ? (

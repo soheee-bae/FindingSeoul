@@ -12,6 +12,8 @@ export type DistrictContextContent = {
   subwayLines: string[];
   setSubwayLines: (subwayLines: string[]) => void;
   stationsPerSubwayline: StationsPerLine[];
+  selectedStation: string;
+  setSelectdStation: (district: string) => void;
 };
 
 const DistrictContext = createContext<DistrictContextContent>({
@@ -22,6 +24,8 @@ const DistrictContext = createContext<DistrictContextContent>({
   subwayLines: [],
   setSubwayLines: () => undefined,
   stationsPerSubwayline: [],
+  selectedStation: "",
+  setSelectdStation: () => undefined,
 });
 
 interface DistrictContextProps {
@@ -32,6 +36,7 @@ function DistrictContextProvider(props: DistrictContextProps) {
   const { children } = props;
 
   const [district, setDistrict] = useState<string>("");
+  const [selectedStation, setSelectdStation] = useState<string>("");
   const [stations, setStations] = useState<string[]>([]);
   const [subwayLines, setSubwayLines] = useState<string[]>([]);
   const [stationsPerSubwayline, setStationsPerSubwayline] = useState<
@@ -78,6 +83,8 @@ function DistrictContextProvider(props: DistrictContextProps) {
         subwayLines,
         setSubwayLines,
         stationsPerSubwayline,
+        selectedStation,
+        setSelectdStation,
       }}
     >
       {children}

@@ -10,12 +10,7 @@ const Menubar = ({
   strokeWidth?: number;
 }) => {
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={width} height={height} xmlns="http://www.w3.org/2000/svg">
       <path
         d="M3 12H21M3 6H21M3 18H21"
         stroke={strokeColor}

@@ -21,8 +21,8 @@ const ChevronLeft = ({
         d="M10 12.75L6 8.5L10 4.25"
         stroke={strokeColor}
         strokeWidth={strokeWidth}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
