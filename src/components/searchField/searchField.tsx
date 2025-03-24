@@ -1,12 +1,15 @@
 "use client";
 import { useDebounce } from "@/hooks/useDebounce";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import styles from "./searchField.module.scss";
+import clsx from "clsx";
 interface searchFieldProps {
   setSearch: (search: string) => void;
+  startIcon?: ReactNode;
 }
 
 export default function SearchField(props: searchFieldProps) {
-  const { setSearch } = props;
+  const { setSearch, startIcon } = props;
 
   const [input, setInput] = useState<string>();
 
@@ -21,13 +24,19 @@ export default function SearchField(props: searchFieldProps) {
   }, [debouncedSearch, setSearch]);
 
   return (
-    <input
-      type="search"
-      placeholder="Search"
-      value={input}
-      onChange={(e) => {
-        setInput?.(e.target.value);
-      }}
-    />
+    <div className={styles.container}>
+      {startIcon && <span className={styles.startIcon}>{startIcon}</span>}
+      <input
+        className={clsx(styles.searchField, {
+          [styles.seachFieldWithIcon]: startIcon,
+        })}
+        type="search"
+        placeholder="Search"
+        value={input}
+        onChange={(e) => {
+          setInput?.(e.target.value);
+        }}
+      />
+    </div>
   );
 }

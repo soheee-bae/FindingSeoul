@@ -73,6 +73,12 @@ function DistrictContextProvider(props: DistrictContextProps) {
     }
   }, [district, stationsData]);
 
+  console.log(district);
+  console.log(stations);
+  console.log(subwayLines);
+  console.log(stationsPerSubwayline);
+  console.log(selectedStation);
+
   return (
     <DistrictContext.Provider
       value={{

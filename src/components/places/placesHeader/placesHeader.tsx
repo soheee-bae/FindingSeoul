@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import styles from "./placesHeader.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
-import { ChevronLeft, Menubar, TitleBackground } from "@/icons";
+import { ChevronLeft, Menubar, SearchIcon, TitleBackground } from "@/icons";
 import { SEOUL_DISTRICTS } from "@/data/districts";
 import { SearchField, SideBar, BaseCategories } from "@/components";
 
@@ -31,7 +31,7 @@ export default function PlacesHeader(props: PlacesHeaderProps) {
             <TitleBackground />
           </div>
           <div className={styles.fields}>
-            <SearchField setSearch={setSearch} />
+            <SearchField setSearch={setSearch} startIcon={<SearchIcon />} />
             <SideBar
               button={<Menubar width={24} height={24} />}
               content={<div>Hello!!</div>}

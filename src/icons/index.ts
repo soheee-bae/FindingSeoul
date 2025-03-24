@@ -30,6 +30,7 @@ export { default as Yongsangu } from "./maps/yongsangu";
 // Navbar Icon
 export { default as Menubar } from "./menubar";
 export { default as ChevronLeft } from "./chevronLeft";
+export { default as SearchIcon } from "./search";
 
 //Background Icon
 export { default as TitleBackground } from "./background/titleBackground";

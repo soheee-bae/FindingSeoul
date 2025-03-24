@@ -1,0 +1,25 @@
+@use "@/styles" as *;
+
+.container {
+  position: relative;
+  display: flex;
+}
+
+.searchField {
+  border: 1px solid $primary-blue;
+  border-radius: 6px;
+  height: 40px;
+  padding: 10px;
+}
+.seachFieldWithIcon {
+  padding-left: 30px;
+}
+.startIcon {
+  position: absolute;
+  align-self: center;
+  left: 5px;
+
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
