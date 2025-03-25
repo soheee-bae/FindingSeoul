@@ -31,7 +31,6 @@ export default function SearchField(props: searchFieldProps) {
           [styles.seachFieldWithIcon]: startIcon,
         })}
         type="search"
-        placeholder="Search"
         value={input}
         onChange={(e) => {
           setInput?.(e.target.value);

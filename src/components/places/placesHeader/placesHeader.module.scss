@@ -6,28 +6,40 @@
   gap: 30px;
 }
 
-.backButton {
-  border: 2px solid $dark-blue;
+.iconButton {
   background-color: $white;
   border-radius: 50%;
-  height: 29px;
-  width: 29px;
-
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 
-  path {
-    stroke: $dark-blue;
-  }
-
   &:hover {
     background-color: $dark-blue;
     path {
       stroke: $white;
     }
+  }
+}
+
+.backButton {
+  @extend .iconButton;
+  border: 2px solid $dark-blue;
+  height: 29px;
+  width: 29px;
+  path {
+    stroke: $dark-blue;
+  }
+}
+
+.filterButton {
+  @extend .iconButton;
+  border: 1.2px solid $dark-blue;
+  height: 38px;
+  width: 38px;
+  path {
+    stroke: $light-black;
   }
 }
 
