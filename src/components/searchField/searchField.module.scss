@@ -3,6 +3,8 @@
 .container {
   position: relative;
   display: flex;
+  max-width: 600px;
+  width: 100%;
 }
 
 .searchField {
@@ -10,12 +12,11 @@
   border-radius: 6px;
   height: 40px;
   padding: 10px;
-  max-width: 600px;
   width: 100%;
 }
 
 .seachFieldWithIcon {
-  padding-left: 35px;
+  padding-left: 32px;
 }
 
 .startIcon {

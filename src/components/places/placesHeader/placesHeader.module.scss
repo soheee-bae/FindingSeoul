@@ -6,41 +6,14 @@
   gap: 30px;
 }
 
-.iconButton {
-  background-color: $white;
-  border-radius: 50%;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $dark-blue;
-    path {
-      stroke: $white;
-    }
-  }
-}
-
 .backButton {
-  @extend .iconButton;
+  @include button(29px, $radius: 50%);
   border: 2px solid $dark-blue;
-  height: 29px;
-  width: 29px;
-  path {
-    stroke: $dark-blue;
-  }
 }
 
 .filterButton {
-  @extend .iconButton;
+  @include button(38px, $radius: 50%, $color: $light-black);
   border: 1.2px solid $dark-blue;
-  height: 38px;
-  width: 38px;
-  path {
-    stroke: $light-black;
-  }
 }
 
 .content {
@@ -48,6 +21,7 @@
   justify-content: space-between;
 
   .innerContent {
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -85,4 +59,5 @@
 }
 
 .img {
+  flex: 1;
 }

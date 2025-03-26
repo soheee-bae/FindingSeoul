@@ -1,0 +1,35 @@
+@use "colors";
+
+@mixin button(
+  $size,
+  $radius: 0,
+  $background: colors.$white,
+  $hoverBackground: colors.$dark-blue,
+  $color: colors.$dark-blue
+) {
+  width: $size;
+  height: $size;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background-color: $background;
+
+  path {
+    stroke: $color;
+  }
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+
+  &:hover {
+    background-color: $hoverBackground;
+    path {
+      stroke: $background;
+    }
+  }
+}

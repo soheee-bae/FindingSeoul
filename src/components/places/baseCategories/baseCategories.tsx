@@ -6,9 +6,7 @@ import { useRouter } from "next/navigation";
 export default function BaseCategories() {
   const router = useRouter();
 
-  const handleCategoryClick = (station: string) => {
-    router.push(`/places/${station}`);
-  };
+  const handleCategoryClick = () => {};
 
   return (
     <div>
