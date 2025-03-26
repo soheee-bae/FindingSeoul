@@ -2,6 +2,9 @@
 
 import { BASE_CATEGORIES } from "@/data/categories";
 import { useRouter } from "next/navigation";
+import styles from "./baseCategories.module.scss";
+import Tag from "@/components/tag/tag";
+import { Menubar } from "@/icons";
 
 export default function BaseCategories() {
   const router = useRouter();
@@ -9,11 +12,14 @@ export default function BaseCategories() {
   const handleCategoryClick = () => {};
 
   return (
-    <div>
+    <div className={styles.container}>
       {BASE_CATEGORIES.map((category) => (
-        <div key={category.id} onClick={handleCategoryClick}>
-          {category.name}
-        </div>
+        <Tag
+          key={category.id}
+          text={category.name}
+          onClick={handleCategoryClick}
+          icon={<Menubar width={24} height={24} />}
+        />
       ))}
     </div>
   );

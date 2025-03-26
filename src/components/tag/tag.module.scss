@@ -1,0 +1,18 @@
+@use "@/styles" as *;
+
+.tag {
+  width: 100px;
+  white-space: nowrap;
+  @extend %body-3;
+  @include button(
+    34px,
+    90px,
+    $radius: 10px,
+    $color: $light-black,
+    $border: 1.2px solid $dark-blue
+  );
+}
+
+.iconTag {
+  gap: 4px;
+}

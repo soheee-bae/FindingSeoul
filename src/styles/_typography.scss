@@ -63,12 +63,22 @@ $inter: "Inter", sans-serif;
   font-weight: $font-medium;
 }
 
+%h7 {
+  font-size: $text-xs;
+  font-weight: $font-medium;
+}
+
 %body-1 {
   font-size: $text-base;
   font-weight: $font-normal;
 }
 
 %body-2 {
+  font-size: $text-sm;
+  font-weight: $font-normal;
+}
+
+%body-3 {
   font-size: $text-xs;
   font-weight: $font-normal;
 }

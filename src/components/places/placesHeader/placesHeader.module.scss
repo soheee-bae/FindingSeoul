@@ -7,13 +7,17 @@
 }
 
 .backButton {
-  @include button(29px, $radius: 50%);
-  border: 2px solid $dark-blue;
+  @include button(29px, 29px, $radius: 50%);
 }
 
 .filterButton {
-  @include button(38px, $radius: 50%, $color: $light-black);
-  border: 1.2px solid $dark-blue;
+  @include button(
+    38px,
+    38px,
+    $radius: 50%,
+    $color: $light-black,
+    $border: 1.2px solid $dark-blue
+  );
 }
 
 .content {

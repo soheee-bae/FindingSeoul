@@ -1,14 +1,16 @@
 @use "colors";
 
 @mixin button(
-  $size,
+  $height,
+  $width,
   $radius: 0,
   $background: colors.$white,
   $hoverBackground: colors.$dark-blue,
-  $color: colors.$dark-blue
+  $color: colors.$dark-blue,
+  $border: 2px solid colors.$dark-blue
 ) {
-  width: $size;
-  height: $size;
+  width: $width;
+  height: $height;
   padding: 0;
 
   display: flex;
@@ -16,6 +18,7 @@
   align-items: center;
   cursor: pointer;
 
+  border: $border;
   background-color: $background;
 
   path {
