@@ -6,7 +6,7 @@
   @extend %body-3;
   @include button(
     34px,
-    90px,
+    80px,
     $radius: 10px,
     $color: $light-black,
     $border: 1.2px solid $dark-blue

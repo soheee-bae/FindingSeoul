@@ -9,20 +9,20 @@
 
 .searchField {
   border: 2px solid $primary-blue;
-  border-radius: 6px;
-  height: 40px;
+  border-radius: 10px;
+  height: 44px;
   padding: 10px;
   width: 100%;
 }
 
 .seachFieldWithIcon {
-  padding-left: 32px;
+  padding-left: 40px;
 }
 
 .startIcon {
   position: absolute;
   align-self: center;
-  left: 8px;
+  left: 14px;
 
   display: flex;
   padding: 0;

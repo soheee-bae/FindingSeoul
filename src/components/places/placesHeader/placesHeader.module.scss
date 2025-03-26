@@ -23,14 +23,16 @@
 .content {
   display: flex;
   justify-content: space-between;
-
-  .innerContent {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
 }
+
+.innerContent {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
 .names {
   @extend %nanumGothicKR;
   display: flex;
@@ -51,9 +53,15 @@
   svg {
     position: absolute;
     z-index: -1;
-    margin-top: -13px;
-    margin-left: -23px;
+    margin-top: -18px;
+    margin-left: -25px;
   }
+}
+
+.fieldsContent {
+  @extend .innerContent;
+  gap: 10px;
+  padding-bottom: 0;
 }
 
 .fields {

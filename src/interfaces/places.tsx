@@ -2,6 +2,8 @@ export interface PlacesProps {
   station: string;
   type?: string;
   displayCount?: number;
+  search?: string;
+  siteSort?: number;
 }
 
 export interface Place {

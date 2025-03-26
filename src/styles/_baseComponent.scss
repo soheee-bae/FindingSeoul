@@ -20,6 +20,7 @@
 
   border: $border;
   background-color: $background;
+  color: $color;
 
   path {
     stroke: $color;
@@ -31,6 +32,8 @@
 
   &:hover {
     background-color: $hoverBackground;
+    color: $background;
+
     path {
       stroke: $background;
     }
