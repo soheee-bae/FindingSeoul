@@ -7,14 +7,13 @@ import { EmptyPlaces, PlaceCard } from "@/components";
 import { Place as PlaceCardInterface } from "@/interfaces/places";
 import styles from "./page.module.scss";
 import PlacesHeader from "@/components/places/placesHeader/placesHeader";
-
-const DEFAULT_TYPE = "음식점";
+import { DEFAULT_TYPE, DEFAULT_SITESORT } from "@/data/categories";
 
 export default function Places() {
   const params = useParams();
   const searchParams = useSearchParams();
   const type = (searchParams.get("type") as string) || DEFAULT_TYPE;
-  const siteSort = (searchParams.get("siteSort") as number) || 0;
+  const siteSort = Number(searchParams.get("siteSort")) || DEFAULT_SITESORT;
 
   const [search, setSearch] = useState<string>();
 
@@ -25,8 +24,9 @@ export default function Places() {
     isFetched,
   } = usePlacesByStation({
     station: params?.station as string,
-    type: search || type,
+    type,
     siteSort,
+    search,
   });
 
   return (

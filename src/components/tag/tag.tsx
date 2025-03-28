@@ -9,12 +9,18 @@ interface TagProps {
   icon?: ReactNode;
   className?: string;
   onClick?: () => void;
+  selected?: boolean;
 }
 export default function Tag(props: TagProps) {
-  const { text, icon, className, onClick } = props;
+  const { text, icon, className, onClick, selected } = props;
   return (
     <div
-      className={clsx(styles.tag, icon && styles.iconTag, className)}
+      className={clsx(
+        styles.tag,
+        icon && styles.iconTag,
+        selected && styles.selectedTag,
+        className
+      )}
       onClick={onClick}
     >
       <p>{text}</p>

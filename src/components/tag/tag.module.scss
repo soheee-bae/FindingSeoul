@@ -16,3 +16,8 @@
 .iconTag {
   gap: 4px;
 }
+
+.selectedTag {
+  background-color: $dark-blue;
+  color: $white;
+}

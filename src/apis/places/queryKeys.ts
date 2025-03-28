@@ -1,7 +1,8 @@
+import { PlacesProps } from "@/interfaces/places";
 import { createQueryKeys } from "@lukemorales/query-key-factory";
 
 export const places = createQueryKeys("places", {
-  getPlacesByStation: (station: string, type?: string) => ({
-    queryKey: [station, type],
+  getPlacesByStation: (params: PlacesProps) => ({
+    queryKey: [params],
   }),
 });

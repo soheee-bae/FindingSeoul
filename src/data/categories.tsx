@@ -41,3 +41,6 @@ export const SORT_BY = [
   { name: "관련도순", id: 0 },
   { name: "거리순", id: 1 },
 ];
+
+export const DEFAULT_TYPE = "DINING";
+export const DEFAULT_SITESORT = 0;
