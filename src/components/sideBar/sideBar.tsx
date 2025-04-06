@@ -3,6 +3,7 @@
 import styles from "./sideBar.module.scss";
 import { ReactNode, useState } from "react";
 import clsx from "clsx";
+import ClickAwayListener from "react-click-away-listener";
 
 interface SideBarProps {
   button: ReactNode;
@@ -15,18 +16,20 @@ export default function SideBar(props: SideBarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={styles.container}>
-      <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
-      <div
-        className={clsx(
-          styles.content,
-          direction === "left" ? styles.leftContent : styles.rightContent,
-          isOpen && styles.openContent
-        )}
-      >
+    <ClickAwayListener onClickAway={() => setIsOpen(false)}>
+      <div className={styles.container}>
         <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
-        {content}
+        <div
+          className={clsx(
+            styles.content,
+            direction === "left" ? styles.leftContent : styles.rightContent,
+            isOpen && styles.openContent
+          )}
+        >
+          <div onClick={() => setIsOpen(!isOpen)}>{button}</div>
+          {content}
+        </div>
       </div>
-    </div>
+    </ClickAwayListener>
   );
 }
