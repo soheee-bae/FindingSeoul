@@ -12,6 +12,7 @@ export default function DistrictImage(props: DistrictImageProps) {
 
   const districtImg = React.cloneElement(imageUrl as React.ReactElement, {
     height: 213,
+    className: "styles.img",
   });
 
   return <div className={styles.container}>{districtImg}</div>;

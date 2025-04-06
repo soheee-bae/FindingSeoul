@@ -3,14 +3,17 @@ const WholeMap = ({
   height = 524,
   fillColor = "white",
   strokeColor = "none",
+  className = "",
 }: {
   width?: number;
   height?: number;
   fillColor?: string;
   strokeColor?: string;
+  className?: string;
 }) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 1017 524"

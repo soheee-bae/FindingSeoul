@@ -3,14 +3,17 @@ const Dobonggu = ({
   height = 117,
   fillColor = "#F2EDEA",
   strokeColor = "none",
+  className = "",
 }: {
   width?: number;
   height?: number;
   fillColor?: string;
   strokeColor?: string;
+  className?: string;
 }) => {
   return (
     <svg
+      className={className}
       max={width}
       width={width}
       height={height}

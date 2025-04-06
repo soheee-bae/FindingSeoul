@@ -3,14 +3,17 @@ const Dongdaemungu = ({
   height = 77,
   fillColor = "#F2EDEA",
   strokeColor = "none",
+  className = "",
 }: {
   width?: number;
   height?: number;
   fillColor?: string;
   strokeColor?: string;
+  className?: string;
 }) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 131 77"

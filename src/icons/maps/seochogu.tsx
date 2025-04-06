@@ -3,19 +3,20 @@ const Seochogu = ({
   height = 160,
   fillColor = "#F2EDEA",
   strokeColor = "none",
-  viewBox = "0 0 244 160",
+  className = "",
 }: {
   width?: number;
   height?: number;
   fillColor?: string;
   strokeColor?: string;
-  viewBox?: string;
+  className?: string;
 }) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
-      viewBox={viewBox}
+      viewBox="0 0 244 160"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

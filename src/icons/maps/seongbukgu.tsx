@@ -3,14 +3,17 @@ const Seongbukgu = ({
   height = 103,
   fillColor = "#F2EDEA",
   strokeColor = "none",
+  className = "",
 }: {
   width?: number;
   height?: number;
   fillColor?: string;
   strokeColor?: string;
+  className?: string;
 }) => {
   return (
     <svg
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 219 103"
