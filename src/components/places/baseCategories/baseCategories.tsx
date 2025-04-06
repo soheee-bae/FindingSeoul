@@ -11,14 +11,11 @@ export default function BaseCategories() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const type = (searchParams.get("type") as string) || DEFAULT_TYPE;
-  const siteSort = Number(searchParams.get("siteSort")) || DEFAULT_SITESORT;
+  // const siteSort = Number(searchParams.get("siteSort")) || DEFAULT_SITESORT;
 
-  console.log(pathname);
-  console.log(searchParams);
   const handleCategoryClick = () => {
-    const url = `${pathname}?${searchParams}`;
-
-    router.push(pathname, { scroll: false });
+    // const url = `${pathname}?${searchParams}`;
+    // router.push(pathname, { scroll: false });
   };
 
   return (

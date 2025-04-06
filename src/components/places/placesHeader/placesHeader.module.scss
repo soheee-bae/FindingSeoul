@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 35px;
 }
 
 .backButton {
@@ -29,8 +29,8 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-bottom: 30px;
+  gap: 35px;
+  padding-bottom: 35px;
 }
 
 .names {
@@ -60,7 +60,7 @@
 
 .fieldsContent {
   @extend .innerContent;
-  gap: 10px;
+  gap: 15px;
   padding-bottom: 0;
 }
 
@@ -72,4 +72,8 @@
 
 .img {
   flex: 1;
+  padding-bottom: 35px;
+  max-height: 213px;
+  height: 100%;
+  margin-top: -18px;
 }

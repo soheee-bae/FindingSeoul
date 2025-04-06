@@ -7,6 +7,7 @@ import { ChevronLeft, FilterIcon, SearchIcon, TitleBackground } from "@/icons";
 import { SEOUL_DISTRICTS } from "@/data/districts";
 import { SearchField, SideBar, BaseCategories } from "@/components";
 import { useRouter } from "next/navigation";
+import DistrictImage from "../districtImage/districtImage";
 
 interface PlacesHeaderProps {
   setSearch: (search: string) => void;
@@ -56,7 +57,9 @@ export default function PlacesHeader(props: PlacesHeaderProps) {
             <BaseCategories />
           </div>
         </div>
-        <div className={styles.img}>{districtImg}</div>
+        <div className={styles.img}>
+          <DistrictImage imageUrl={districtImg} />
+        </div>
       </div>
     </div>
   );
