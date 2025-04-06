@@ -13,7 +13,7 @@ export default function Places() {
   const params = useParams();
   const searchParams = useSearchParams();
   const type = (searchParams.get("type") as string) || DEFAULT_TYPE;
-  const siteSort = Number(searchParams.get("siteSort")) || DEFAULT_SITESORT;
+  // const siteSort = Number(searchParams.get("siteSort")) || DEFAULT_SITESORT;
 
   const [search, setSearch] = useState<string>();
 
@@ -25,7 +25,7 @@ export default function Places() {
   } = usePlacesByStation({
     station: params?.station as string,
     type,
-    siteSort,
+    // siteSort,
     search,
   });
 

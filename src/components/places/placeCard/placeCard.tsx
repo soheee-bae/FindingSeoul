@@ -1,7 +1,7 @@
 "use client";
 
 import { Place } from "@/interfaces/places";
-
+import styles from "./placeCard.module.scss";
 interface PlaceCardProps {
   place: Place;
 }
@@ -9,19 +9,13 @@ interface PlaceCardProps {
 export default function PlaceCard(props: PlaceCardProps) {
   const { place } = props;
   return (
-    <div
-      key={place.id}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        border: "1px solid gray",
-        padding: "10px",
-        borderRadius: 10,
-        fontSize: 10,
-      }}
-    >
-      <h5>{place.display || place.name}</h5>
-      <p>{place.abbrAddress}</p>
+    <div key={place.id} className={styles.card}>
+      <img src={place.thumUrl} />
+      <div className={styles.content}>
+        <h5>{place.display || place.name}</h5>
+        <p>{place.description}</p>
+      </div>
+      {/* <p>{place.abbrAddress}</p>
       <p>{place.address}</p>
       <p>{place.bizhourInfo}</p>
       <div>
@@ -29,10 +23,10 @@ export default function PlaceCard(props: PlaceCardProps) {
           <p key={idx}>{category}</p>
         ))}
       </div>
-      <p>{place.description}</p>
+      
       <p>{place.homePage}</p>
-      <p>{place.telDisplay || place.tel}</p>
-      <img width={10} height={10} src={place.thumUrl} />
+      <p>{place.telDisplay || place.tel}</p> */}
+
       {/* <p>{place.menuInfo}</p> */}
     </div>
   );
