@@ -1,6 +1,7 @@
 "use client";
 
 import { useStationsByDistrict } from "@/apis/stations/queries";
+import { useSessionStorage } from "@/hooks/useSessionStorage";
 import { Station, StationsPerLine } from "@/interfaces/stationsInterface";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 
@@ -35,8 +36,15 @@ interface DistrictContextProps {
 function DistrictContextProvider(props: DistrictContextProps) {
   const { children } = props;
 
-  const [district, setDistrict] = useState<string>("");
-  const [selectedStation, setSelectdStation] = useState<string>("");
+  const { item: sessionDistrict, setItem: setSessionDistrict } =
+    useSessionStorage("district");
+  const { item: sessionSelectedStation, setItem: setSessionSelectedStation } =
+    useSessionStorage("selectedStation");
+
+  const [district, setDistrict] = useState<string>(sessionDistrict || "");
+  const [selectedStation, setSelectdStation] = useState<string>(
+    sessionSelectedStation || ""
+  );
   const [stations, setStations] = useState<string[]>([]);
   const [subwayLines, setSubwayLines] = useState<string[]>([]);
   const [stationsPerSubwayline, setStationsPerSubwayline] = useState<
@@ -71,13 +79,19 @@ function DistrictContextProvider(props: DistrictContextProps) {
       setSubwayLines(filteredSubwayLines);
       setStationsPerSubwayline(stationsPerSubwayline);
     }
-  }, [district, stationsData]);
+  }, [stationsData]);
 
-  console.log(district);
-  console.log(stations);
-  console.log(subwayLines);
-  console.log(stationsPerSubwayline);
-  console.log(selectedStation);
+  useEffect(() => {
+    if (district !== sessionDistrict) {
+      setSessionDistrict(district);
+    }
+  }, [district, sessionDistrict, setSessionDistrict]);
+
+  useEffect(() => {
+    if (selectedStation !== sessionSelectedStation) {
+      setSessionSelectedStation(selectedStation);
+    }
+  }, [selectedStation, sessionSelectedStation, setSessionSelectedStation]);
 
   return (
     <DistrictContext.Provider

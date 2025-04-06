@@ -3,6 +3,7 @@
 import styles from "./homeMap.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { SEOUL_DISTRICTS } from "@/data/districts";
+import { District } from "@/interfaces/district";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 
@@ -16,13 +17,18 @@ export default function HomeMap() {
     router.push(`/places/${station}`);
   };
 
+  const handleDistrictClick = (district: District) => {
+    setDistrict(district.name);
+    // window.history.pushState(null, "", `/${district.name}`);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.map}>
         {/* <WholeMap /> */}
         {SEOUL_DISTRICTS.map((district) => (
           <div
-            onClick={() => setDistrict(district.name)}
+            onClick={() => handleDistrictClick(district)}
             key={district.name}
             className={styles.districtMap}
             style={{ left: district?.x, top: district?.y }}
