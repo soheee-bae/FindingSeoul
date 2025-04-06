@@ -26,6 +26,7 @@ export { default as Yangcheongu } from "./maps/yangcheongu";
 export { default as Yeongdeungpogu } from "./maps/yeongdeungpogu";
 export { default as Yeongdeungpogu2 } from "./maps/yeongdeungpogu2";
 export { default as Yongsangu } from "./maps/yongsangu";
+export { default as MapPin } from "./maps/mapPin";
 
 // Navbar Icon
 export { default as Menubar } from "./menubar";
@@ -35,3 +36,4 @@ export { default as FilterIcon } from "./filter";
 
 //Background Icon
 export { default as TitleBackground } from "./background/titleBackground";
+export { default as DistrictBackground } from "./background/districtImgBackground";

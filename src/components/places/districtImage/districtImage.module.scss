@@ -1,10 +1,34 @@
+@use "@/styles" as *;
+
 .container {
   height: 100%;
   display: flex;
   align-items: start;
   justify-content: center;
+  padding: 0 23px;
+  position: relative;
+}
 
-  svg {
-    width: 100%;
+.img {
+  width: 100%;
+  overflow: visible;
+  filter: drop-shadow(-2px 12px 1px rgba(0, 0, 0, 0.25));
+  path {
+    fill: $primary-blue;
+    stroke: $dark-blue;
+    stroke-width: 2;
   }
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  left: -15px;
+  margin: auto;
+}
+
+.mappin {
+  position: absolute;
+  z-index: 2;
+  margin: auto;
 }
