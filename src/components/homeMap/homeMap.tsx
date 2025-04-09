@@ -26,7 +26,7 @@ export default function HomeMap() {
     <div className={styles.container}>
       <div className={styles.map}>
         {/* <WholeMap /> */}
-        {SEOUL_DISTRICTS.map((district) => (
+        {/* {SEOUL_DISTRICTS.map((district) => (
           <div
             onClick={() => handleDistrictClick(district)}
             key={district.name}
@@ -35,9 +35,9 @@ export default function HomeMap() {
           >
             {district.mapImage}
           </div>
-        ))}
+        ))} */}
       </div>
-      <div className={styles.info}>
+      {/* <div className={styles.info}>
         <p>{district}</p>
         <div>
           {stations.map((station) => (
@@ -57,7 +57,7 @@ export default function HomeMap() {
             <p key={lines}>{lines}호선</p>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
