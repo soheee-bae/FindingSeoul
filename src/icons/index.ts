@@ -37,3 +37,4 @@ export { default as FilterIcon } from "./filter";
 //Background Icon
 export { default as TitleBackground } from "./background/titleBackground";
 export { default as DistrictBackground } from "./background/districtImgBackground";
+export { default as HomeBackground } from "./background/homeBackground";
