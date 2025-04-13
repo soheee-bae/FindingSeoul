@@ -1,10 +1,14 @@
+@use "@/styles" as *;
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  height: calc(100vh - $navbar-height);
   overflow: hidden;
+
+  border: 1px solid red;
 
   svg {
     filter: drop-shadow(#c6c8ca 4px 4px 2px);
@@ -12,22 +16,28 @@
 }
 
 .map {
-  height: 100%;
-  width: 50%;
   position: relative;
+  border: 1px solid blue;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+.wholeMap {
+  position: absolute;
+  z-index: -1;
+}
+
+.districtMaps {
+  height: 90%;
+  width: 80%;
+  position: relative;
+  border: 1px solid red;
 }
 
 .districtMap {
+  position: absolute;
   cursor: pointer;
   &:hover {
     svg path {
-      fill: #588d89;
+      fill: $primary-blue;
     }
   }
 }
