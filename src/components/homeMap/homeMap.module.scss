@@ -8,8 +8,6 @@
   height: calc(100vh - $navbar-height);
   overflow: hidden;
 
-  border: 1px solid red;
-
   svg {
     filter: drop-shadow(#c6c8ca 4px 4px 2px);
   }
@@ -17,7 +15,6 @@
 
 .map {
   position: relative;
-  border: 1px solid blue;
 }
 
 .wholeMap {
@@ -25,11 +22,18 @@
   z-index: -1;
 }
 
+.districtMapsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .districtMaps {
-  height: 90%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   position: relative;
-  border: 1px solid red;
 }
 
 .districtMap {

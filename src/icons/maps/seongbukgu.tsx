@@ -1,5 +1,5 @@
 const Seongbukgu = ({
-  width = 267,
+  width = 260,
   height = 128,
   fillColor = "none",
   strokeColor = "#97ACC1",

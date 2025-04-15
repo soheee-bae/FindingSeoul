@@ -1,6 +1,6 @@
 const Yangcheongu = ({
-  width = 189,
-  height = 95,
+  width = 185,
+  height = 100,
   fillColor = "none",
   strokeColor = "#97ACC1",
   className = "",
@@ -16,7 +16,7 @@ const Yangcheongu = ({
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 189 95"
+      viewBox="0 0 189 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

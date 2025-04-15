@@ -1,5 +1,5 @@
 const Eunpyeonggu = ({
-  width = 182,
+  width = 172,
   height = 170,
   fillColor = "none",
   strokeColor = "#97ACC1",

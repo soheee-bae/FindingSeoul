@@ -1,5 +1,5 @@
 const Gangbukgu = ({
-  width = 181,
+  width = 175,
   height = 157,
   fillColor = "none",
   strokeColor = "#97ACC1",

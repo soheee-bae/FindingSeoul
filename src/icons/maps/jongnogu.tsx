@@ -1,5 +1,5 @@
 const Jongnogu = ({
-  width = 197,
+  width = 192,
   height = 129,
   fillColor = "none",
   strokeColor = "#97ACC1",

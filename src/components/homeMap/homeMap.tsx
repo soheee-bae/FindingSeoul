@@ -26,8 +26,8 @@ export default function HomeMap() {
   return (
     <div className={styles.container}>
       <div className={styles.map}>
-        <WholeMap width={1200} />
-        <div>
+        <WholeMap />
+        <div className={styles.districtMapsContainer}>
           <div className={styles.districtMaps}>
             {SEOUL_DISTRICTS.map((district) => (
               <div
