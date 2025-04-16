@@ -21,7 +21,7 @@ const MapPin = ({
       <path
         d="M6.04004 53.4098C9.52986 54.5731 10.1115 53.9916 15.9279 53.4099C21.7442 52.8281 20.9133 53.7977 24.0708 54.5732"
         stroke="black"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <circle
         cx="15.9278"
@@ -29,12 +29,12 @@ const MapPin = ({
         r="14.7042"
         fill={fill}
         stroke="black"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <path
         d="M13.0195 31.1301L13.0195 52.7725H17.6726V42.4888L17.6726 31.1301H13.0195Z"
         stroke="black"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <circle cx="10.9686" cy="7.49719" r="0.826537" fill="black" />
       <circle cx="7.66223" cy="9.97668" r="0.826537" fill="black" />

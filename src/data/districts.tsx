@@ -50,8 +50,8 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "강서구",
     mapImage: <Ganseogu />,
-    x: 20,
-    y: 226,
+    x: 22,
+    y: 232,
   },
   {
     name: "관악구",
@@ -101,17 +101,17 @@ export const SEOUL_DISTRICTS: District[] = [
     x: 420,
     y: 448,
   },
-  // {
-  //   name: "마포구",
-  //   mapImage: <Mapogu />,
-  //   x: 206,
-  //   y: 212,
-  // },
+  {
+    name: "마포구",
+    mapImage: <Mapogu />,
+    x: 263,
+    y: 270,
+  },
   {
     name: "서대문구",
     mapImage: <Seodaemungu />,
-    x: 430,
-    y: 254,
+    x: 437,
+    y: 252,
   },
   {
     name: "서초구",
@@ -128,7 +128,7 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "성북구",
     mapImage: <Seongbukgu />,
-    x: 637,
+    x: 638,
     y: 172,
   },
   {
@@ -141,7 +141,7 @@ export const SEOUL_DISTRICTS: District[] = [
     name: "양천구",
     mapImage: <Yangcheongu />,
     x: 162,
-    y: 378,
+    y: 380,
   },
   {
     name: "영등포구",
@@ -164,8 +164,8 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "은평구",
     mapImage: <Eunpyeonggu />,
-    x: 386,
-    y: 126,
+    x: 385,
+    y: 128,
   },
   {
     name: "종로구",
@@ -176,7 +176,7 @@ export const SEOUL_DISTRICTS: District[] = [
   {
     name: "중구",
     mapImage: <Junggu />,
-    x: 570,
+    x: 574,
     y: 315,
   },
   {
