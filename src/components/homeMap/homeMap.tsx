@@ -3,7 +3,7 @@
 import styles from "./homeMap.module.scss";
 import DistrictContext from "@/contexts/districtsContext";
 import { SEOUL_DISTRICTS } from "@/data/districts";
-import { WholeMap } from "@/icons";
+import { HomeBackground, WholeMap } from "@/icons";
 import { District } from "@/interfaces/district";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
@@ -25,6 +25,7 @@ export default function HomeMap() {
 
   return (
     <div className={styles.container}>
+      <HomeBackground className={styles.background} />
       <div className={styles.map}>
         <WholeMap />
         <div className={styles.districtMapsContainer}>

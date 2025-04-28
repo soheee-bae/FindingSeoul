@@ -7,19 +7,28 @@
 
   height: calc(100vh - $navbar-height);
   overflow: hidden;
+}
 
+.background {
+  z-index: -2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 1351px;
+  max-height: 811px;
+}
+
+.map {
+  position: relative;
   svg {
     filter: drop-shadow(#c6c8ca 4px 4px 2px);
   }
 }
 
-.map {
-  position: relative;
-}
-
 .wholeMap {
   position: absolute;
   z-index: -1;
+  background-color: white;
 }
 
 .districtMapsContainer {
@@ -39,6 +48,9 @@
 .districtMap {
   position: absolute;
   cursor: pointer;
+  svg path {
+    fill: white;
+  }
   &:hover {
     svg path {
       fill: $primary-blue;
