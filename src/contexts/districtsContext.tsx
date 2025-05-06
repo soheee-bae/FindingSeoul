@@ -54,6 +54,11 @@ function DistrictContextProvider(props: DistrictContextProps) {
   const { data: stationsData } = useStationsByDistrict(district);
 
   useEffect(() => {
+    if (sessionSelectedStation && !selectedStation)
+      setSelectdStation(sessionSelectedStation);
+  }, [selectedStation, sessionSelectedStation]);
+
+  useEffect(() => {
     if (stationsData) {
       const stations = stationsData.stations.map((sub: Station) =>
         sub.name.trim()
@@ -89,7 +94,7 @@ function DistrictContextProvider(props: DistrictContextProps) {
 
   useEffect(() => {
     if (selectedStation !== sessionSelectedStation) {
-      setSessionSelectedStation(selectedStation);
+      setSessionSelectedStation(decodeURI(selectedStation));
     }
   }, [selectedStation, sessionSelectedStation, setSessionSelectedStation]);
 

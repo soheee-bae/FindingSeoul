@@ -26,6 +26,7 @@ export default function PlacesHeader(props: PlacesHeaderProps) {
   const handleRedirect = () => {
     router.push("/");
   };
+
   return (
     <div className={styles.container}>
       <button className={styles.backButton} onClick={handleRedirect}>
@@ -58,7 +59,7 @@ export default function PlacesHeader(props: PlacesHeaderProps) {
           </div>
         </div>
         <div className={styles.img}>
-          <DistrictImage imageUrl={districtImg} />
+          {/* <DistrictImage imageUrl={districtImg} /> */}
         </div>
       </div>
     </div>
