@@ -26,8 +26,9 @@ export default function Places() {
     isFetching,
     isFetched,
   } = usePlacesByStation({
-    station: station as string,
+    station: station,
     // siteSort,
+    baseCategory: DEFAULT_TYPE,
     search,
   });
 

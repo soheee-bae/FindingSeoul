@@ -1,19 +1,11 @@
-export type PlacesProps = {
+export interface PlacesProps {
   station: string;
   displayCount?: number;
   siteSort?: number;
-} & (
-  | {
-      baseCategory?: string;
-      subCategory?: string;
-      search?: never;
-    }
-  | {
-      baseCategory?: never;
-      subCategory?: never;
-      search?: string;
-    }
-);
+  baseCategory?: string;
+  subCategory?: string;
+  search?: string;
+}
 
 export interface Place {
   id: number;

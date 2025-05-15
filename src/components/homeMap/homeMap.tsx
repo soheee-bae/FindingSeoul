@@ -43,7 +43,7 @@ export default function HomeMap() {
           </div>
         </div>
       </div>
-      {/* <div className={styles.info}>
+      <div className={styles.info}>
         <p>{district}</p>
         <div>
           {stations.map((station) => (
@@ -63,7 +63,7 @@ export default function HomeMap() {
             <p key={lines}>{lines}호선</p>
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
