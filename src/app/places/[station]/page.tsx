@@ -10,6 +10,7 @@ import PlacesHeader from "@/components/places/placesHeader/placesHeader";
 import { DEFAULT_TYPE, DEFAULT_SITESORT } from "@/data/categories";
 import { useSessionStorage } from "@/hooks/useSessionStorage";
 import { redirect } from "next/navigation";
+import PlacesCardsSkeleton from "@/components/skeleton/placesCardsSkeleton";
 
 export default function Places() {
   const { station } = useParams<{ station: string }>();
@@ -24,13 +25,14 @@ export default function Places() {
     data: places = [],
     isLoading,
     isFetching,
-    isFetched,
   } = usePlacesByStation({
     station: station,
     // siteSort,
     baseCategory: DEFAULT_TYPE,
     search,
   });
+
+  const loading = isLoading || isFetching;
 
   useEffect(() => {
     if (!sessionDistrict) {
@@ -45,17 +47,14 @@ export default function Places() {
   return (
     <div className={styles.container}>
       <PlacesHeader setSearch={setSearch} />
-      {isLoading || isFetching ? (
-        <div>Loading....</div>
-      ) : places && places.length > 0 && isFetched ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 10,
-            flexWrap: "wrap",
-          }}
-        >
+      {!loading ? (
+        <div className={styles.content}>
+          {[...Array(9)].map((_u) => (
+            <PlacesCardsSkeleton key={_u} />
+          ))}
+        </div>
+      ) : places && places.length > 0 ? (
+        <div className={styles.content}>
           {places?.map((place: PlaceCardInterface) => (
             <PlaceCard place={place} key={place.name} />
           ))}

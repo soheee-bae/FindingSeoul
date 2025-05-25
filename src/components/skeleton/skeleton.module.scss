@@ -1,0 +1,62 @@
+@use "@/styles" as *;
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    color: hsla(0, 0, 100%, 0.5);
+    background: linear-gradient(
+      60deg,
+      transparent 30%,
+      currentColor 45%,
+      currentColor 55%,
+      transparent 70%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  align-items: center;
+  padding: 25px;
+  border: 2px solid $primary-blue;
+  border-style: dashed;
+  border-radius: 10px;
+  @extend .shimmer;
+
+  .img {
+    min-height: 200px;
+    width: 100%;
+    background-color: $primary-blue;
+    border-radius: 10px;
+  }
+
+  .text {
+    min-height: 13px;
+    width: 100%;
+    background-color: $primary-blue;
+    border-radius: 10px;
+  }
+}

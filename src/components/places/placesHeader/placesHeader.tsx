@@ -59,7 +59,7 @@ export default function PlacesHeader(props: PlacesHeaderProps) {
           </div>
         </div>
         <div className={styles.img}>
-          {/* <DistrictImage imageUrl={districtImg} /> */}
+          <DistrictImage imageUrl={districtImg} />
         </div>
       </div>
     </div>
