@@ -1,0 +1,19 @@
+@use "@/styles" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: calc(100vh - 400px);
+  height: 100%;
+
+  border: 2px solid $lighter-blue;
+  border-style: dashed;
+  border-radius: 10px;
+
+  p {
+    @extend %body-2;
+  }
+}

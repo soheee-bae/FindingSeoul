@@ -47,7 +47,7 @@ export default function Places() {
   return (
     <div className={styles.container}>
       <PlacesHeader setSearch={setSearch} />
-      {!loading ? (
+      {loading ? (
         <div className={styles.content}>
           {[...Array(9)].map((_u) => (
             <PlacesCardSkeleton key={_u} />
