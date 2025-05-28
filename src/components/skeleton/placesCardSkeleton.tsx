@@ -2,7 +2,7 @@
 
 import styles from "./skeleton.module.scss";
 
-export default function PlacesCardsSkeleton() {
+export default function PlacesCardSkeleton() {
   return (
     <div className={styles.card}>
       <div className={styles.img} />

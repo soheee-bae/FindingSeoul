@@ -4,6 +4,6 @@
 
 .content {
   display: grid;
-  gap: 10px 10px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 15px 15px;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 }

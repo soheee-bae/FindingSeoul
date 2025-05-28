@@ -1,5 +1,6 @@
 $white: #ffffff;
 $lightest-blue: #f4f6f8;
+$lighter-blue: #c6d1dd;
 $primary-blue: #97acc1;
 $dark-blue: #78899a;
 $little-darker-blue: #686868;
@@ -10,6 +11,7 @@ $black: #000000;
 :export {
   $white: $white;
   $lightest-blue: $lightest-blue;
+  $lighter-blue: $lighter-blue;
   $primary-blue: $primary-blue;
   $dark-blue: $dark-blue;
   $little-darker-blue: $little-darker-blue;

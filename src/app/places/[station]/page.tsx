@@ -10,7 +10,7 @@ import PlacesHeader from "@/components/places/placesHeader/placesHeader";
 import { DEFAULT_TYPE, DEFAULT_SITESORT } from "@/data/categories";
 import { useSessionStorage } from "@/hooks/useSessionStorage";
 import { redirect } from "next/navigation";
-import PlacesCardsSkeleton from "@/components/skeleton/placesCardsSkeleton";
+import PlacesCardSkeleton from "@/components/skeleton/placesCardSkeleton";
 
 export default function Places() {
   const { station } = useParams<{ station: string }>();
@@ -50,7 +50,7 @@ export default function Places() {
       {!loading ? (
         <div className={styles.content}>
           {[...Array(9)].map((_u) => (
-            <PlacesCardsSkeleton key={_u} />
+            <PlacesCardSkeleton key={_u} />
           ))}
         </div>
       ) : places && places.length > 0 ? (

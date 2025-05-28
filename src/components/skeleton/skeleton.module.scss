@@ -41,7 +41,7 @@
 
   align-items: center;
   padding: 25px;
-  border: 2px solid $primary-blue;
+  border: 2px solid $lighter-blue;
   border-style: dashed;
   border-radius: 10px;
   @extend .shimmer;
@@ -49,14 +49,25 @@
   .img {
     min-height: 200px;
     width: 100%;
-    background-color: $primary-blue;
+    background-color: $lightest-blue;
     border-radius: 10px;
   }
 
-  .text {
-    min-height: 13px;
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
     width: 100%;
-    background-color: $primary-blue;
-    border-radius: 10px;
+    > div:first-child {
+      width: 50%;
+    }
+  }
+
+  .text {
+    min-height: 20px;
+    width: 80%;
+    background-color: $lightest-blue;
+    border-radius: 4px;
   }
 }
