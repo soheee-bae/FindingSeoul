@@ -53,6 +53,7 @@ function DistrictContextProvider(props: DistrictContextProps) {
 
   const { data: stationsData } = useStationsByDistrict(district);
 
+  console.log(stationsData);
   useEffect(() => {
     if (sessionSelectedStation && !selectedStation)
       setSelectdStation(sessionSelectedStation);

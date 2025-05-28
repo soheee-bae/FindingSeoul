@@ -25,7 +25,7 @@ const WholeMap = ({
         strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-dasharray="10 10"
+        strokeDasharray="10 10"
         fill={fillColor}
         stroke={strokeColor}
       />
